@@ -1,50 +1,113 @@
-# Welcome to your Expo app 👋
+# AI-Powered Parking System
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A cross-platform mobile app (React Native + Expo) that connects parking owners (hosts) with users seeking parking spots. Features real-time booking, secure payments, and AI-powered vehicle check-in.
 
-## Get started
+---
 
-1. Install dependencies
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Setup & Running](#setup--running)
+- [Key Flows](#key-flows)
+- [Configuration](#configuration)
+- [Contribution](#contribution)
 
+---
+
+## Overview
+This app enables:
+- **Users** to find, book, and pay for parking spots.
+- **Hosts** to list, manage, and earn from their parking spaces.
+- **AI/ML**: Vehicle check-in uses number plate recognition for secure access.
+
+---
+
+## Features
+
+### For Users (Parking Seekers)
+- Sign Up / Login
+- Find parking on a map, filter by distance
+- View parking details (features, price, address, etc.)
+- Book parking for specific time slots
+- Check availability in real-time
+- Pay securely via Stripe (add/manage cards)
+- Manage bookings: view, cancel, check-in (with number plate verification)
+- Wallet: manage payment methods, view transactions
+- Profile: view and update user info
+
+### For Hosts (Parking Owners)
+- Sign Up / Login
+- Create new parking spots (location, images, features)
+- Dashboard: view revenue stats (daily/weekly/monthly)
+- Manage parkings: update, delete, view all
+- Bookings management: view all bookings, confirm check-ins, mark vehicles as visited
+- Wallet: view earnings, manage payout methods
+- Profile: view and update host info
+
+---
+
+## Tech Stack
+- **Frontend**: React Native (Expo), Redux Toolkit, React Navigation
+- **Backend API**: Consumed via Axios (auth, parking, booking, payment endpoints)
+- **Payments**: Stripe integration
+- **Location & Maps**: Google Maps, device geolocation
+- **AI/ML**: Number plate recognition for check-in (backend service)
+
+---
+
+## Project Structure
+- `src/app/` — Main app screens and navigation (User & Host flows)
+- `Redux/` — State management (user, parking, booking slices)
+- `src/api/` — API endpoints and HTTP service
+- `src/assets/` — Images, fonts, videos
+- `android/` — Native Android project files
+- `package.json` — Project dependencies and scripts
+
+---
+
+## Setup & Running
+
+1. **Install dependencies**
    ```bash
    npm install
    ```
-
-2. Start the app
-
+2. **Start the app**
    ```bash
-    npx expo start
+   npx expo start
    ```
+   - Open in Expo Go, Android emulator, or iOS simulator.
+3. **Backend**
+   - Ensure the backend API (auth, parking, booking, payment, number plate recognition) is running and accessible (see `src/api/constants.js` for the base URL).
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Key Flows
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### User Flow
+1. Onboarding → Sign Up / Login → Home (Find Parking, Bookings, Wallet, Profile)
+2. Find and book parking → Pay via Stripe → Check-in with number plate verification
 
-## Get a fresh project
+### Host Flow
+1. Onboarding → Host Sign Up / Login → Host Home (Dashboard, Create Parking, Bookings, Wallet, Profile)
+2. Add/manage parkings → View bookings → Confirm check-ins and manage revenue
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
-```
+## Configuration
+- **Google Maps API Key**: Required for maps (see `app.json` and Android/iOS config)
+- **Stripe Publishable Key**: Set in `src/app/index.tsx`
+- **Backend URL**: Set in `src/api/constants.js`
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## Contribution
+- Fork and clone the repo
+- Create feature branches for changes
+- Submit pull requests for review
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## License
+[MIT](LICENSE)
