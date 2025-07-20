@@ -1,0 +1,81 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+
+# Expo
+.expo/
+.expo-shared/
+expo-env.d.ts
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/*.iml
+android/app/*.iml
+android/.cxx/
+android/app/.cxx/
+android/app/debug.keystore
+
+# Android Studio
+*.iml
+.idea/
+*.hprof
+
+# Build output
+build/
+dist/
+*.jsbundle
+
+# Misc
+*.log
+*.tmp
+*.swp
+*.swo
+
+# VSCode
+.vscode/
+
+# Test coverage
+coverage/
+
+# OS generated files
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Expo/React Native assets
+*.expo
+*.expo-shared
+
+# TypeScript
+*.tsbuildinfo
+
+# JetBrains IDEs
+*.ipr
+*.iws
+out/
+
+# Others
+config-output.json
+
+# Ignore generated files in src
+src/.DS_Store
+
+# Ignore reset project script output
+reset project.rtf
